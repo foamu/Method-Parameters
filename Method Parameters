@@ -1,0 +1,67 @@
+class Starship {
+	
+	String direction;
+	int speed;
+	
+
+	public void setCourse(String course, int knots) {
+		System.out.println("Setting course: " + course + " at a speed of " + knots + " knots.");
+	}
+	
+	public void lockAndFire(String target){
+		System.out.println("Firing at" + target);
+	}
+
+}
+
+public class MethodParameters {
+
+	public static void main(String[] args) {
+		
+		Starship constitution = new Starship();
+		
+		String direction = null;
+		int speedCalc = (int) (Math.random() * 13 + 1);
+		int directionCalc = (int) (Math.random() * 4 + 1);
+		
+		switch (directionCalc) {
+
+		case 1: {
+			direction = "North";
+			break;
+		}
+		case 2: {
+			direction = "East";
+			break;
+		}
+		case 3: {
+			direction = "South";
+			break;
+		}
+		case 4: {
+			direction = "West";
+			break;
+		}
+		}
+		
+		constitution.direction = direction;
+		constitution.speed = speedCalc;
+		
+		constitution.setCourse(direction, speedCalc);
+		
+		
+		if (constitution.speed < 5) {
+			System.out.println("Ship at insufficient speed.");
+		}
+		else if (constitution.speed >= 5) {
+				System.out.println("Ship at adaquate speed.");
+			}
+		
+		String enemyVessel = " Alien capital ship.";
+		
+		constitution.lockAndFire(enemyVessel);
+		
+		
+		constitution.setCourse("Random course", 12);
+		}
+	}
